@@ -34,7 +34,7 @@ namespace LambdaPractice
                 Console.WriteLine(c);
             }
             //sort ballProducts alphabetically and print them to the console.
-            ballProducts = ballProducts.OrderBy(x = x.Length).ToList();
+            ballProducts = ballProducts.OrderBy(x => x).ToList();
             //add six more items to the products list using .add().
             products.Add("Hockey Mask");
             products.Add("Hockey Stick");
@@ -61,7 +61,10 @@ namespace LambdaPractice
             }
             //print out all the products ordered by the longest word first using the OrderByDecending() extension and a foreach loop.  
             //You will not use a variable to store your list
-            Console.WriteLine(products.OrderByDescending(x => x.Length));
+            foreach (var d in products)
+            {
+                Console.WriteLine(products.OrderByDescending(x => x.Length).First());
+            }
 
             Console.ReadKey();
         }
